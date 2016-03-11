@@ -1,0 +1,31 @@
+{
+  "name": "ng-http-canceller",
+  "version": "1.0.0",
+  "description": "This module will help you to cancel $http requests",
+  "main": "httpCancellerModule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityaghosh1987/ng-http-canceller.git"
+  },
+  "keywords": [
+    "$http",
+    "abort",
+    "$http",
+    "cancel",
+    "$http",
+    "abort",
+    "cancel",
+    "restangular",
+    "api",
+    "call"
+  ],
+  "author": "Aditya Ghosh <adityashr.ghosh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adityaghosh1987/ng-http-canceller/issues"
+  },
+  "homepage": "https://github.com/adityaghosh1987/ng-http-canceller"
+}
