@@ -43,7 +43,7 @@ It cancels all the running API calls except the latest one. For example,
 the user needs some data after pressing some button. That button internally 
 calls an API which returns some data & that data reflects into the UI. 
 If the user presses that button very frequently then same API will get 
-called multiple times before getting it response & All called API returns 
+called multiple times before getting its response & All called API returns 
 same response & user face flicker issue.
 
 ## To achieve this functionality please follow the bellow following steps:
@@ -68,7 +68,7 @@ httpCanceller.removeEntry(apiKey);
 */
 var apiKey = 'key_' + uniqueKey; 
 var canceler = $q.defer(),
-  	request = {
+    request = {
   		method : method type like 'get', 'post', 'delete', 'put',
   		url : '',
   		headers : {
@@ -78,22 +78,22 @@ var canceler = $q.defer(),
   		data : {},
   		timeout : canceler.promise
     };
-  /**
-	*	Registering the API entry to httpCanceller factory(Step 1)
-	*/  
-	httpCanceller.pushEntry(apiKey, canceler);
-	$http(req).then(function onSuccess(response){
-	  /**
-		*	Unregistering the API entry from httpCanceller factory(Step 2)
-		*/
-		httpCanceller.removeEntry(apiKey);
-		return response
-	}, function onError(){
-	  /**
-		*	Unregistering the API entry from httpCanceller factory(Step 2)
-		*/ 
-		httpCanceller.removeEntry(apiKey);
-	});
+/**
+*	Registering the API entry to httpCanceller factory(Step 1)
+*/  
+httpCanceller.pushEntry(apiKey, canceler);
+$http(req).then(function onSuccess(response){
+  	/**
+	*	Unregistering the API entry from httpCanceller factory(Step 2)
+	*/
+	httpCanceller.removeEntry(apiKey);
+	return response
+}, function onError(){
+  	/**
+	*	Unregistering the API entry from httpCanceller factory(Step 2)
+	*/ 
+	httpCanceller.removeEntry(apiKey);
+});
 ```
 ### 2. Register API entry for restangular : 
 ```javascript
@@ -121,7 +121,7 @@ apiResponse.then(function onSuccess(response){
 	httpCanceller.removeEntry(apiKey);
 	return response
 }, function onError(){
-  /**
+  	/**
 	*	Unregistering the API entry from httpCanceller factory(Step 2)
 	*/
 	httpCanceller.removeEntry(apiKey);
